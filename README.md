@@ -2,7 +2,7 @@
 How to handle "can't find user for xxx" error after trying to reference newly added ldap user from earlier in converge
 
 ## Synopsis
-Have you ever into this issue:
+Have you ever run into this issue:
 https://tickets.opscode.com/browse/CHEF-3780
 
 Scenario: node is bootstrapped and during the 1st converge gets added to AD or some ldap OU
