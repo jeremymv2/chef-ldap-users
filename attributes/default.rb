@@ -1,0 +1,1 @@
+default['ldapuser'] = 'vagrant'
