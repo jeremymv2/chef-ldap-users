@@ -6,6 +6,7 @@ Have you ever into this issue:
 https://tickets.opscode.com/browse/CHEF-3780
 
 Scenario: node is bootstrapped and during the 1st converge gets added to AD or some ldap OU
+
 Later in the recipe a resource (such as file) is defined wth an owner attribute using an ldap user.
 
 ERROR:
