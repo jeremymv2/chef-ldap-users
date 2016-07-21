@@ -12,8 +12,8 @@ Later in the recipe a resource (such as file) is defined wth an owner attribute 
 ERROR:
 ```
 ArgumentError
-           -------------
-           can't find user for xxx
+-------------
+can't find user for xxx
 ```
 
 
