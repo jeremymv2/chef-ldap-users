@@ -17,7 +17,7 @@ can't find user for xxx
 ```
 
 
-This is because when chef-client runs it doesn't know about the new users.  An Ohai reload doesn't solve the problem either.
+This is because when chef-client began executing it didn't know about the new ldap users.  An Ohai reload doesn't solve the problem either.
 
 
 The cookbook in here suggests one way to work around this problem and still be able to use the new ldap users
