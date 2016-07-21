@@ -13,8 +13,11 @@ cmd = Mixlib::ShellOut.new("getent passwd #{node['ldapuser']}")
 cmd.run_command
 
 if cmd.exitstatus == 0
+  # include the recipe that references the ldap user
   include_recipe "#{cookbook_name}::dothething"
 else
+  # one-time chef-apply under shell-out will spawn new process
+  # that can see the newly added ldap users
   output = Chef::JSONCompat.to_json_pretty({ 'ldapuser' => node['ldapuser'] })
   file '/tmp/attribute.json' do
     content output
