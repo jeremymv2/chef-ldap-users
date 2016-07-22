@@ -18,7 +18,7 @@ if cmd.exitstatus == 0
 else
   # one-time chef-apply under shell-out will spawn new process
   # that can see the newly added ldap users
-  output = Chef::JSONCompat.to_json_pretty({ 'ldapuser' => node['ldapuser'] })
+  output = Chef::JSONCompat.to_json_pretty('ldapuser' => node['ldapuser'])
   file '/tmp/attribute.json' do
     content output
   end
@@ -28,8 +28,7 @@ else
       Chef::Resource::RubyBlock.send(:include, Chef::Mixin::ShellOut)
       path = ::File.join(Chef::Config[:file_cache_path], "cookbooks/#{cookbook_name}/recipes/dothething.rb")
       cmd = shell_out("chef-apply #{path} -j /tmp/attribute.json")
-      puts cmd.stderr
-      puts cmd.stdout
+      puts cmd.stderr, cmd.stdout
     end
   end
 end
